@@ -1,0 +1,10 @@
+<section class="panel">
+  <h2>Detalle</h2>
+
+  @if (libro) {
+    <p class="titulo">{{ libro }}</p>
+    <button type="button" class="limpiar" (click)="limpiarSeleccion()">Limpiar</button>
+  } @else {
+    <p class="vacio">No has seleccionado ningún libro.</p>
+  }
+</section>

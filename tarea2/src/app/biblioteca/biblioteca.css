@@ -1,0 +1,28 @@
+.biblioteca {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+}
+
+header p {
+  margin: 8px 0 32px;
+  color: #4a5666;
+}
+
+.paneles {
+  display: grid;
+  gap: 20px;
+  align-items: start;
+}
+
+@media (min-width: 720px) {
+  .paneles {
+    grid-template-columns: 1fr 1fr;
+  }
+}
