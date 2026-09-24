@@ -1,0 +1,19 @@
+<section class="panel">
+  <h2>Libros</h2>
+
+  <ul class="lista">
+    @for (libro of libros; track libro) {
+      <li>
+        <button
+          type="button"
+          class="item"
+          [class.activo]="libro === seleccionado"
+          [attr.aria-pressed]="libro === seleccionado"
+          (click)="elegir(libro)"
+        >
+          {{ libro }}
+        </button>
+      </li>
+    }
+  </ul>
+</section>

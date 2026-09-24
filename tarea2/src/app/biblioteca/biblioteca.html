@@ -1,0 +1,16 @@
+<div class="biblioteca">
+  <header>
+    <h1>Mi biblioteca</h1>
+    <p>Elige un título de la lista para ver cuál seleccionaste.</p>
+  </header>
+
+  <div class="paneles">
+    <app-lista-libros
+      [libros]="libros"
+      [seleccionado]="libroSeleccionado"
+      (seleccionar)="seleccionarLibro($event)"
+    />
+
+    <app-detalle-libro [libro]="libroSeleccionado" (limpiar)="limpiarSeleccion()" />
+  </div>
+</div>
