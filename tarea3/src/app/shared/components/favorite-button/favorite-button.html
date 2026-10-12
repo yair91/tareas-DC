@@ -1,0 +1,13 @@
+<button
+  type="button"
+  class="fav-btn"
+  [ngClass]="{ active: active, lg: size === 'lg' }"
+  [attr.aria-pressed]="active"
+  [attr.aria-label]="active ? 'Quitar de favoritos' : 'Agregar a favoritos'"
+  (click)="onClick($event)"
+>
+  <span class="icon" aria-hidden="true">{{ active ? '★' : '☆' }}</span>
+  @if (size === 'lg') {
+    <span>{{ active ? 'Quitar de favoritos' : 'Agregar a favoritos' }}</span>
+  }
+</button>

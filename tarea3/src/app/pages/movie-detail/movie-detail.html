@@ -1,0 +1,49 @@
+<section class="page">
+  <a class="back" routerLink="/">← Volver al catálogo</a>
+
+  @if (movie(); as movie) {
+    <article class="detail">
+      <img class="poster" [src]="movie.poster" [alt]="'Poster de ' + movie.title" appPosterFallback />
+
+      <div class="content">
+        <p class="genre">{{ movie.genre }}</p>
+        <h1>{{ movie.title }}</h1>
+        <p class="year">{{ movie.year }}</p>
+
+        <p class="description">{{ movie.description }}</p>
+
+        <dl class="facts">
+          <div>
+            <dt>Director</dt>
+            <dd>{{ movie.director }}</dd>
+          </div>
+          <div>
+            <dt>Productor</dt>
+            <dd>{{ movie.producer }}</dd>
+          </div>
+          <div>
+            <dt>Género</dt>
+            <dd>{{ movie.genre }}</dd>
+          </div>
+          <div>
+            <dt>Año</dt>
+            <dd>{{ movie.year }}</dd>
+          </div>
+        </dl>
+
+        <div class="actions">
+          <app-favorite-button size="lg" [active]="isFavorite()" (toggled)="toggleFavorite()" />
+          @if (isFavorite()) {
+            <a class="link" routerLink="/favorites">Ver mis favoritos</a>
+          }
+        </div>
+      </div>
+    </article>
+  } @else {
+    <div class="empty">
+      <h1>Película no encontrada</h1>
+      <p>La película que buscas no existe en el catálogo.</p>
+      <a class="link" routerLink="/">Ir al catálogo</a>
+    </div>
+  }
+</section>

@@ -1,0 +1,21 @@
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" routerLink="/">Películas Favoritas</a>
+
+    <nav>
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        Catálogo
+      </a>
+      <a routerLink="/favorites" routerLinkActive="active">
+        Favoritos
+        @if (favoritesCount() > 0) {
+          <span class="badge">{{ favoritesCount() }}</span>
+        }
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <router-outlet />
+</main>

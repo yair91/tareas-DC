@@ -1,0 +1,36 @@
+.fav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--border);
+  background: rgba(15, 17, 26, 0.75);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.35rem 0.6rem;
+  font: inherit;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    border-color 0.15s,
+    color 0.15s;
+}
+
+.fav-btn:hover {
+  border-color: var(--accent);
+}
+
+.fav-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #1a1206;
+}
+
+.icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.fav-btn.lg {
+  padding: 0.7rem 1.2rem;
+  font-weight: 600;
+}

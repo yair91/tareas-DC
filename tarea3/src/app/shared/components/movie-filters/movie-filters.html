@@ -1,0 +1,45 @@
+<form class="filters" [formGroup]="form">
+  <div class="field search">
+    <label for="term">Buscar</label>
+    <input
+      id="term"
+      type="search"
+      formControlName="term"
+      placeholder="Ej. Nolan, 1994, drama..."
+      autocomplete="off"
+    />
+  </div>
+
+  <div class="field">
+    <label for="criteria">Buscar en</label>
+    <select id="criteria" formControlName="criteria">
+      @for (option of criteriaOptions; track option.value) {
+        <option [value]="option.value">{{ option.label }}</option>
+      }
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="genre">Género</label>
+    <select id="genre" formControlName="genre">
+      <option value="">Todos</option>
+      @for (genre of genres; track genre) {
+        <option [value]="genre">{{ genre }}</option>
+      }
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="year">Año</label>
+    <select id="year" formControlName="year">
+      <option [ngValue]="null">Todos</option>
+      @for (year of years; track year) {
+        <option [ngValue]="year">{{ year }}</option>
+      }
+    </select>
+  </div>
+
+  <button type="button" class="clear" [disabled]="!hasFilters" (click)="clear()">Limpiar</button>
+</form>
+
+<p class="count" aria-live="polite">Mostrando {{ resultCount }} de {{ total }} películas</p>
