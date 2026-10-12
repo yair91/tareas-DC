@@ -1,0 +1,15 @@
+<article class="card">
+  <a class="poster" [routerLink]="['/movies', movie.id]" [attr.aria-label]="'Ver detalle de ' + movie.title">
+    <img [src]="movie.poster" [alt]="'Poster de ' + movie.title" loading="lazy" appPosterFallback />
+  </a>
+
+  <div class="fav">
+    <app-favorite-button [active]="isFavorite" (toggled)="onToggle()" />
+  </div>
+
+  <div class="info">
+    <a class="title" [routerLink]="['/movies', movie.id]">{{ movie.title }}</a>
+    <p class="meta">{{ movie.year }} · {{ movie.genre }}</p>
+    <p class="director">{{ movie.director }}</p>
+  </div>
+</article>

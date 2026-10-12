@@ -1,0 +1,59 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition:
+    transform 0.15s,
+    border-color 0.15s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+}
+
+.poster {
+  display: block;
+  aspect-ratio: 2 / 3;
+  background: #1f2433;
+}
+
+.poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.fav {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+
+.info {
+  padding: 0.75rem 0.85rem 1rem;
+}
+
+.title {
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+  line-height: 1.3;
+}
+
+.title:hover {
+  color: var(--accent);
+}
+
+.meta,
+.director {
+  margin: 0.3rem 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
